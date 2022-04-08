@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hello World</title>
+</head>
+<body>
+
+	{%include 'superior/navbar.html'%}
+
+	<h2>Hello fucking world!</h2>
+	
+	{% if name == "Juan" %}
+		<p>Se está cumpliendo la condicion del nombre :D</p>
+	{%else%}
+		<p>NO Se está cumpliendo la condicion del nombre :D</p>
+	{%endif%}
+
+	<p>El nombre es: {{name|lower}} {{lastName.upper}}</p>
+	<p>{{date.day}} / {{date.month}} / {{date.year}}</p>
+
+	<p>Temas del curso</p>
+	<p>
+		<ul>
+		{% if temas%}
+			{% for i in temas %}
+				<!-- COMENTARIO <li>{{i|first|lower}}</li> -->
+
+				<li>{{i}}</li>
+			{% endfor %}
+		{% else %}
+			<p>No hay elementos en la lista</p>
+		{% endif %}
+		</ul>
+	</p>
+</body>
+</html>
